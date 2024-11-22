@@ -1,0 +1,20 @@
+---
+import "./ProgressBar.scss";
+---
+
+<div class="progress">
+    <div class="progressBar" id="progressBar"></div>
+    <script defer>
+        window.onscroll = function () {
+            var scroll =
+                document.body.scrollLeft || document.documentElement.scrollLeft;
+            var total =
+                document.documentElement.scrollWidth -
+                document.documentElement.clientWidth;
+            document.getElementById("progressBar").style.width =
+                (scroll / total) * 100 + "%";
+
+            // console.log((scroll / total) * 100 + "%");
+        };
+    </script>
+</div>

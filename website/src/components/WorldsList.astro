@@ -1,0 +1,23 @@
+---
+import "./WorldsList.scss";
+
+interface Props {
+    id: string;
+    worlds: Array<{ href: string; imgRef: string }>;
+    top: boolean;
+}
+
+const { worlds, top, id } = Astro.props;
+---
+
+<section class={`world-section ${top ? "ws-top" : "ws-bottom"}`} id={id}>
+    {
+        worlds?.map((data) => (
+            <a href={data.href} target="_blank">
+                <img src={data.imgRef} alt="" height="32" />
+            </a>
+        ))
+    }
+
+    
+</section>

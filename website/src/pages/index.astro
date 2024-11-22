@@ -1,0 +1,458 @@
+---
+import InteractableIcon from "../components/InteractableIcon.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import Starfield from "../components/Starfield.astro";
+import Layout from "../layouts/Layout.astro";
+import "./index.scss";
+
+const WORLDS = {
+	DaybreakTown: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Daybreak_Town",
+		imgRef: "/images/worlds/Daybreak_Town_Logo.webp",
+	},
+	Agrabah: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Agrabah",
+		imgRef: "/images/worlds/Agrabah.webp",
+	},
+	BosqueDeLosEnanitos: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Bosque_de_los_Enanitos",
+		imgRef: "/images/worlds/Bosque_de_los_Enanitos.webp",
+	},
+	CastilloDeBestia: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Castillo_de_Bestia",
+		imgRef: "/images/worlds/Castillo_de_Bestia_KHII.webp",
+	},
+	ColiseoDelOlimpo: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Coliseo_del_Olimpo",
+		imgRef: "/images/worlds/Coliseo_del_Olimpo_BBS.webp",
+	},
+	PaisDeLasMaravillas: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Pa%C3%ADs_de_las_Maravillas",
+		imgRef: "/images/worlds/Wonderland_KH_Mundo.webp",
+	},
+	ScalaAdCaelum: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Scala_ad_Caelum",
+		imgRef: "/images/worlds/Scala_ad_Caelum_Logo.webp",
+	},
+	IslasDelDestino: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Islas_del_Destino",
+		imgRef: "/images/worlds/Destiny_Islands_Logo.webp",
+	},
+	AcreWood: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Bosque_de_los_100_Acres",
+		imgRef: "/images/worlds/100_Acre_Wood_Logo_KHII.webp",
+	},
+	TierraDePartida: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Tierra_de_Partida",
+		imgRef: "/images/worlds/250px-Land_of_Departure_Logo_KHBBS.webp",
+	},
+	CiudadDisney: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Ciudad_Disney",
+		imgRef: "/images/worlds/Ciudad_Disney.webp",
+	},
+	TorreDeLosMisterios: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Torre_de_los_Misterios",
+		imgRef: "/images/worlds/Mysterious_Tower_Logo_KHBBS.webp",
+	},
+	CastilloDelOlvido: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Castillo_del_Olvido",
+		imgRef: "/images/worlds/Castle_Oblivion_Logo_KHCOM.webp",
+	},
+	PaisDeNuncaJamas: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Pa%C3%ADs_de_Nunca_Jam%C3%A1s",
+		imgRef: "/images/worlds/Neverlandkhbbslogo.webp",
+	},
+	NecropolisLlavesEspada: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Necr%C3%B3polis_de_Llaves_Espada",
+		imgRef: "/images/worlds/KeybladeGraveyard.webp",
+	},
+	ReinoEncantado: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Reino_Encantado",
+		imgRef: "/images/worlds/Logo_Dominio_Encantado.webp",
+	},
+	VergelRadiante: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Vergel_Radiante",
+		imgRef: "/images/worlds/Radiant_Garden_Logo_KHBBS.webp",
+	},
+	CastilloDeLosSueños: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Castillo_de_los_Sue%C3%B1os",
+		imgRef: "/images/worlds/CastleofDreamsWorld.webp",
+	},
+	EspacioProfundo: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Espacio_Profundo",
+		imgRef: "/images/worlds/Logoespacioprofundo.webp",
+	},
+};
+---
+
+<Layout title="KingdomHearts Timeline - ArugerDev">
+	<main class="mainPage">
+		<!-- <script defer>
+			/**
+			 * Horizontal sroll left function
+			 * @param {selector} hover trigger element
+			 */
+
+			const horizontalScroll = {
+				scrollElement: "",
+				init(selector) {
+					this.scrollElement =
+					document.querySelector.bind(document)(selector);
+
+					if (document.addEventListener) {
+						this.scrollElement.addEventListener(
+							"mousewheel",
+							this.MouseWheelHandler(),
+							false,
+						);
+						this.scrollElement.addEventListener(
+							"DOMMouseScroll",
+							this.MouseWheelHandler(),
+							false,
+						);
+					} else {
+						sq.attachEvent("onmousewheel", MouseWheelHandler());
+					}
+				},
+				MouseWheelHandler() {
+					return function (e) {
+						if (window.innerWidth >= 768) {
+							e.preventDefault();
+
+							var e = window.event || e;
+							//Determine if Chrome due to Chrome 61 removing document.body scroll events.
+							//Ref: https://stackoverflow.com/questions/45061901/chrome-61-body-doesnt-scroll
+							var scrollNode = document.scrollingElement
+								? document.scrollingElement
+								: document.body;
+							//Get crossbrowser wheel delta
+							var delta = e.wheelDelta
+								? e.wheelDelta
+								: -e.detail * 25;
+							scrollNode.scrollLeft =
+								scrollNode.scrollLeft - delta * 2;
+						}
+
+						return false;
+					};
+				},
+				destroy() {
+					this.scrollElement.removeEventListener(
+						"mousewheel",
+						this.MouseWheelHandler(),
+						false,
+					);
+					this.scrollElement.removeEventListener(
+						"DOMMouseScroll",
+						this.MouseWheelHandler(),
+						false,
+					);
+				},
+			};
+
+		</script> -->
+		<Starfield />
+		<ProgressBar />
+		<InteractableIcon
+			id="kh_x_pc_0"
+			iconHref="images/logos/kh_x_pc_logo.webp"
+			reversedWorlds={false}
+			title="Kingdom Hearts X (PC)"
+			date="18 de julio de 2013"
+			position={{ x: "50%", y: "50%" }}
+			worlds={[
+				WORLDS.DaybreakTown,
+				WORLDS.Agrabah,
+				WORLDS.BosqueDeLosEnanitos,
+				WORLDS.CastilloDeBestia,
+				WORLDS.ColiseoDelOlimpo,
+				WORLDS.PaisDeLasMaravillas,
+			]}
+		>
+			<>
+				<em>
+					Es el mundo de un cuento de hadas lejano. El mundo está
+					lleno de luz. Varios mundos han nacido en la luz, a la vez
+					que la luz les rodea. Desde la luz del Reino de los
+					Corazones, hay una Llave Espada χ protegida. Por aquel
+					entonces, los mundos creían en la luz eterna. Sin embargo,
+					una gran luz da lugar a una sombra oscura. Desde la
+					oscuridad, la ansiedad y el miedo despertó el deseo. Con la
+					oscuridad escondido en las profundidades de los corazones
+					despertados, el caos empezó a expandirse por los mundos.
+					Para detener la propagación de la oscuridad, aquellos que
+					buscan la luz crearon una copia de la Llave espada χ,
+					empezando así una aventura en la que el destino de los
+					mundos está en juego.
+				</em>
+				<br />
+				<br />
+
+				Hecho para ser jugado en un navegador de PC, se presenta como el
+				primer juego social de la saga para PC.
+				<br />
+				<br />
+
+				En cuanto al Jugador principal, puedes personalizar tu avatar,
+				viajar a través de varios mundos Disney, y mucho más. Explora
+				cada lugar para encontrar objetos con los que puedas fabricar
+				cartas y luchar para conseguir la victoria. El juego ha
+				desarrollado un nuevo y novedosos sistema. De vez en cuando
+				necesitarás que te ayuden amigos para derrotar a un enemigo,
+				¡así que podréis uniros y divertiros!
+
+				<a
+					style="display: flex; position:absolute; bottom:24px; right:24px;"
+					href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts_%CF%87"
+					target="_blank"
+				>
+					<img src="/images/icons/link-ico.png" alt="" width="16" />
+				</a>
+			</>
+		</InteractableIcon>
+		<InteractableIcon
+			id="kh_dark_road"
+			iconHref="images/logos/kh_dark_road_logo.webp"
+			reversedWorlds={false}
+			title="Kingdom Hearts Dark Road (Card Game)"
+			date="22 de junio de 2020"
+			position={{ x: "80%", y: "40%" }}
+			worlds={[
+				WORLDS.ScalaAdCaelum,
+				WORLDS.IslasDelDestino,
+				WORLDS.Agrabah,
+				WORLDS.PaisDeLasMaravillas,
+				WORLDS.CastilloDeBestia,
+			]}
+		>
+			<>
+				<strong>Kingdom Hearts Dark Road</strong> (titulado como Kingdom
+				Hearts Union χ Dark Road) es un juego de rol con cartas que está
+				en exclusiva en los dispositivos IOS, Android y Fire OS. En él se
+				controla a Xehanort como protagonista.
+
+				<br />
+				<br />
+
+				La historia de Dark Road se presenta en forma de episodios. La
+				historia principal tiene lugar durante el aprendizaje de
+				Xehanort en la clase del Maestro Odín en Scala ad Caelum, cuando
+				el Maestro se ve obligado a enviar a sus alumnos en busca de la
+				Clase superior, otros estudiantes que empuñan la Llave Espada y
+				que desaparecieron durante su Examen de la Marca de Maestría.
+				<br />
+				<br />
+				Sin embargo, cada episodio también toca otros momentos en la vida
+				de Xehanort, incluida su juventud en las Islas del Destino antes
+				de llegar a Scala ad Caelum con la ayuda de su yo futuro, su propio
+				viaje como parte de su examen de Marca de Maestría y incluso sus
+				maquinaciones como adulto para iniciar una nueva Guerra de Llaves
+				Espada y invocar a Kingdom Hearts.
+
+				<a
+					style="display: flex; position:absolute; bottom:24px; right:24px;"
+					href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts_Dark_Road"
+					target="_blank"
+				>
+					<img src="/images/icons/link-ico.png" alt="" width="16" />
+				</a>
+			</>
+		</InteractableIcon>
+
+		<InteractableIcon
+			id="kh_bbs"
+			iconHref="images/logos/kh_bbs_logo.webp"
+			reversedWorlds={true}
+			title="Kingdom Hearts Birth by Sleep (PSP)"
+			date="9 de enero del 2010"
+			position={{ x: "110%", y: "60%" }}
+			worlds={[
+				WORLDS.CastilloDeLosSueños,
+				WORLDS.IslasDelDestino,
+				WORLDS.BosqueDeLosEnanitos,
+				WORLDS.VergelRadiante,
+				WORLDS.ReinoEncantado,
+				WORLDS.NecropolisLlavesEspada,
+				WORLDS.EspacioProfundo,
+				WORLDS.PaisDeNuncaJamas,
+				WORLDS.CastilloDelOlvido,
+				WORLDS.TorreDeLosMisterios,
+				WORLDS.CiudadDisney,
+				WORLDS.ColiseoDelOlimpo,
+				WORLDS.AcreWood,
+				WORLDS.TierraDePartida,
+			]}
+		>
+			<>
+				<p>
+					<strong>Kingdom Hearts Birth by Sleep</strong> es el sexto videojuego
+					de la saga Kingdom Hearts exclusivo para el sistema portátil
+					Playstation Portable (PSP). El nombre del videojuego es el mismo
+					que el vídeo secreto de Kingdom Hearts II Final Mix, "Birth by
+					Sleep", que representa una versión estilizada de una escena del
+					videojuego. Kingdom Hearts Birth by Sleep fue desarrollado por
+					el mismo equipo que creó Kingdom Hearts Re:Chain of Memories.
+					<br />
+					<br />
+					El juego es la precuela del videojuego Kingdom Hearts original,
+					cuyos sucesos tendrían lugar diez años antes. La historia se
+					centra principalmente en Terra, Aqua y Ventus, tres jóvenes portadores
+					de la Llave Espada anteriores a la generación de Sora, aunque
+					el juego también se centra en el origen de Sora y Xehanort, profundizando
+					en los misterios del sombrío pasado de Xehanort, así como la
+					forma en la que Sora y Riku llegaron a empuñar la llave espada.
+					<br />
+					<br />
+					Kingdom Hearts Birth by Sleep empieza en el mundo Tierra de Partida,
+					donde tres portadores de la llave espada, amigos íntimos, Terra,
+					Aqua y Ventus (más conocido como Ven), intentan convertirse en
+					Maestros de la Llave Espada bajo la tutela del Maestro Eraqus.
+					Para lograr este rango, los aprendices deben realizar el Examen
+					del Título de Maestro una vez llegan a una edad. Terra y Aqua
+					realizan el examen juntos, pero mientras Aqua aprueba, Terra
+					es declarado no apto para ser maestro debido a la abundante oscuridad
+					que hay en su corazón. Después de esto, un grupo de Nescientes
+					empiezan a aparecer en otros mundos, y otro maestro de la llave
+					espada, Xehanort, desaparece sin dejar rastro. Terra es enviado
+					a destruir a los Nescientes y a encontrar a Xehanort, quien antes
+					animó a Terra a abrazar la oscuridad de su corazón si desea la
+					fuerza para ser Maestro de la Llave Espada.
+				</p>
+				<a
+					style="display: flex; position:absolute; bottom:24px; right:24px;"
+					href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts_Birth_by_Sleep"
+					target="_blank"
+				>
+					<img src="/images/icons/link-ico.png" alt="" width="16" />
+				</a>
+			</>
+		</InteractableIcon>
+		<script defer>
+
+			// horizontalScroll.init("html");
+
+			function createLines() {
+				connectDivs("kh_x_pc_0", "kh_dark_road", "white", 0.6, 10);
+				connectDivs("kh_dark_road", "kh_bbs", "white", 0.6, 10);
+			}
+
+			function createSVG() {
+				var svg = document.getElementById("svg-canvas");
+				if (null == svg) {
+					svg = document.createElementNS(
+						"http://www.w3.org/2000/svg",
+						"svg",
+					);
+					svg.setAttribute("id", "svg-canvas");
+					svg.setAttribute(
+						"style",
+						"position:absolute;top:0px;left:0px",
+					);
+					svg.setAttribute("width", "300vw");
+					svg.setAttribute("height", document.body.clientHeight);
+					svg.setAttributeNS(
+						"http://www.w3.org/2000/xmlns/",
+						"xmlns:xlink",
+						"http://www.w3.org/1999/xlink",
+					);
+					document.body.appendChild(svg);
+				}
+				return svg;
+			}
+			function findAbsolutePosition(htmlElement) {
+				var x = htmlElement.offsetLeft;
+				var y = htmlElement.offsetTop;
+				for (
+					var x = 0, y = 0, el = htmlElement;
+					el != null;
+					el = el.offsetParent
+				) {
+					x += el.offsetLeft;
+					y += el.offsetTop;
+				}
+				return {
+					x: x,
+					y: y,
+				};
+			}
+			function connectDivs(leftId, rightId, color, tension, strokeWidth) {
+				var left = document.getElementById(leftId);
+				var right = document.getElementById(rightId);
+
+				var leftPos = findAbsolutePosition(left);
+				var x1 = leftPos.x;
+				var y1 = leftPos.y;
+				x1 += left.offsetWidth;
+				y1 += left.offsetHeight / 2;
+
+				var rightPos = findAbsolutePosition(right);
+				var x2 = rightPos.x;
+				var y2 = rightPos.y;
+				y2 += right.offsetHeight / 2;
+
+				var width = x2 - x1;
+				var height = y2 - y1;
+
+				drawCircle(x1, y1, 3, color);
+				drawCircle(x2, y2, 3, color);
+				drawCurvedLine(x1, y1, x2, y2, color, tension, strokeWidth);
+			}
+			function drawCircle(x, y, radius, color) {
+				var svg = createSVG();
+				var shape = document.createElementNS(
+					"http://www.w3.org/2000/svg",
+					"circle",
+				);
+				shape.setAttributeNS(null, "cx", x);
+				shape.setAttributeNS(null, "cy", y);
+				shape.setAttributeNS(null, "r", radius);
+				shape.setAttributeNS(null, "fill", color);
+				svg.appendChild(shape);
+			}
+			function drawCurvedLine(
+				x1,
+				y1,
+				x2,
+				y2,
+				color,
+				tension,
+				strokeWidth,
+			) {
+				var svg = createSVG();
+				var shape = document.createElementNS(
+					"http://www.w3.org/2000/svg",
+					"path",
+				);
+				{
+					var delta = (x2 - x1) * tension;
+					var hx1 = x1 + delta;
+					var hy1 = y1;
+					var hx2 = x2 - delta;
+					var hy2 = y2;
+					var path =
+						"M " +
+						x1 +
+						" " +
+						y1 +
+						" C " +
+						hx1 +
+						" " +
+						hy1 +
+						" " +
+						hx2 +
+						" " +
+						hy2 +
+						" " +
+						x2 +
+						" " +
+						y2;
+					shape.setAttributeNS(null, "d", path);
+					shape.setAttributeNS(null, "fill", "none");
+					shape.setAttributeNS(null, "stroke", color);
+					shape.setAttributeNS(null, "stroke-width", strokeWidth);
+					svg.appendChild(shape);
+				}
+			}
+		</script>
+	</main>
+</Layout>

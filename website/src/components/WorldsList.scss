@@ -1,0 +1,63 @@
+.world-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    max-width: 25vw;
+    max-height: 32px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    place-items: end;
+    align-items: flex-end;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: auto;
+    transform-origin: top;
+    padding-bottom: 12px;
+    z-index: 999999999999999;
+    a {
+        display: flex;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    &.ws-top {
+        top: -24%;
+    }
+
+    &.ws-bottom {
+        bottom: -24%;
+    }
+
+    &::-webkit-scrollbar {
+        display: flex;
+        height: 4px;
+    }
+
+    /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+    &::-webkit-scrollbar-thumb {
+        background: #3a3a3a;
+        border-radius: 4px;
+    }
+
+    /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #575757;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Cambiamos el fondo cuando esté en active */
+    &::-webkit-scrollbar-thumb:active {
+        background-color: #636363;
+    }
+
+}

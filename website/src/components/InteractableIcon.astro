@@ -1,0 +1,72 @@
+---
+import "./InteractableIcon.scss";
+import WorldsList from "./WorldsList.astro";
+
+interface Props {
+    id: string;
+    position: { x: string; y: string };
+    iconHref: string;
+    title: string;
+    date: string;
+    worlds: Array<{ href: string; imgRef: string }>;
+    reversedWorlds: boolean;
+}
+
+const {
+    id,
+    iconHref,
+    title,
+    worlds,
+    date,
+    position,
+    reversedWorlds = false,
+} = Astro.props;
+---
+
+<button
+    class="interactableIcon"
+    style={`top:${position.y}; left:${position.x};`}
+    id={id}
+>
+    <img class="point" src="images/point.png" width="128px" alt="" />
+    <img
+        class="logo"
+        src={iconHref}
+        width="164px"
+        alt={title}
+        onclick="onClick(self)"
+    />
+
+    <section class="infoPanel">
+        <section class="top-section">
+            <h1>{title}</h1>
+            <h2>{date}</h2>
+        </section>
+        <hr />
+        <p>
+            <slot />
+        </p>
+        <WorldsList id={id} worlds={worlds} top={reversedWorlds} />
+    </section>
+
+    <script defer>
+        let selected = false;
+
+        function onClick() {
+            const button = document.activeElement;
+            var rect = findAbsolutePosition(button);
+
+            if (button.classList.contains("selected")) {
+                document.documentElement.scrollLeft =
+                    rect.x - document.body.clientWidth / 2;
+                button.classList.remove("selected");
+                return;
+            }
+            document.documentElement.scrollLeft = rect.x - 150;
+            document.querySelectorAll(".selected").forEach((el) => {
+                el.classList.remove("selected");
+            });
+            button.classList.add("selected");
+        }
+    </script>
+</button>
