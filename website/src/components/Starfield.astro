@@ -5,24 +5,25 @@ import "./Starfield.scss";
 <section id="starfield-canvas"></section>
 
 <script defer>
-    let resizeTimeout;
+    // let resizeTimeout;
     const parent = document.getElementById("starfield-canvas");
 
     document.addEventListener("DOMContentLoaded", function () {
+
         placeRandomStars();
         createLines();
-        document.documentElement.scrollLeft = 1;
 
         window.addEventListener("resize", onWindowResize);
+        document.documentElement.scrollLeft = 0;
     });
 
     function onWindowResize() {
         fadeOutAndAdjustStarPositions();
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function () {
-            removeExistingStars();
-            placeRandomStars();
-        }, 1000);
+        // clearTimeout(resizeTimeout);
+        // resizeTimeout = setTimeout(function () {
+        removeExistingStars();
+        placeRandomStars();
+        // }, 1000);
 
         if (document.querySelectorAll("#svg-canvas").length > 0) {
             document
@@ -33,7 +34,7 @@ import "./Starfield.scss";
     }
 
     function placeRandomStars() {
-        const pixelDensity = 50000;
+        const pixelDensity = 10000;
 
         const bodyWidth = (document.body.clientWidth - 2) * 5;
         const bodyHeight = document.body.clientHeight - 2;

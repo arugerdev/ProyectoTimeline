@@ -1,11 +1,11 @@
  /* --- Star Background ------------------------------------------------ */
 
-
-
  #starfield-canvas {
-     display: contents;
-     position: static;
-     width: 100%;
+     display: flex;
+     position:absolute;
+     left: 0;
+     top: 0;
+     width: 150%;
      height: 100%;
      min-width: 100%;
      min-height: 100%;

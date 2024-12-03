@@ -28,11 +28,17 @@ const {
     style={`top:${position.y}; left:${position.x};`}
     id={id}
 >
-    <img class="point" src="images/point.png" width="128px" alt="" />
+    <img
+        class="point"
+        src="images/point.png"
+        width="256px"
+        alt=""
+        onclick="onClick(self)"
+    />
     <img
         class="logo"
         src={iconHref}
-        width="164px"
+        width="256px"
         alt={title}
         onclick="onClick(self)"
     />

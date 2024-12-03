@@ -1,5 +1,6 @@
 main {
     display: flex;
+    position: relative;
     place-items: center;
     justify-content: center;
     margin: auto;
@@ -11,14 +12,37 @@ main {
     min-width: 100vw;
     height: 100%;
     width: 100%;
+    // width: fit-content;
+
     background: transparent;
     overflow-y: hidden;
     overflow-x: scroll;
 }
 
+.timelineContent {
+    display: flex;
+    flex-direction: row;
+    gap: 20vw;
+    padding-left: 40vw;
+    padding-right: 40vw;
+
+    .interactableIcon:nth-child(even) {
+        margin-bottom: 200px;
+    }
+
+    .interactableIcon:nth-child(odd) {
+        margin-top: 200px;
+    }
+}
+
 html {
 
     cursor: grab;
+}
+
+.grabbed_elem {
+    cursor: grabbing;
+    scroll-behavior: auto;
 }
 
 .active {
@@ -30,6 +54,7 @@ html {
 }
 
 #svg-canvas {
+    position: static;
     user-select: none;
     pointer-events: none;
 

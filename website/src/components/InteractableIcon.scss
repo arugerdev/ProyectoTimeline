@@ -27,7 +27,8 @@
 
     user-select: none;
     display: flex;
-    position:absolute;
+    position:static;
+    // position:absolute;
     flex-direction: row;
     width: fit-content;
     height: fit-content;
