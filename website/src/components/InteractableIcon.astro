@@ -56,19 +56,18 @@ const {
     </section>
 
     <script defer>
-        let selected = false;
-
         function onClick() {
+            document.documentElement.scrollLeft = 0;
             const button = document.activeElement;
             var rect = findAbsolutePosition(button);
-
             if (button.classList.contains("selected")) {
                 document.documentElement.scrollLeft =
-                    rect.x - document.body.clientWidth / 2;
+                    rect.x + (50 * document.body.clientWidth) / 1920;
                 button.classList.remove("selected");
                 return;
             }
-            document.documentElement.scrollLeft = rect.x - 150;
+            document.documentElement.scrollLeft =
+                rect.x - (100 * document.body.clientWidth) / 1920;
             document.querySelectorAll(".selected").forEach((el) => {
                 el.classList.remove("selected");
             });
