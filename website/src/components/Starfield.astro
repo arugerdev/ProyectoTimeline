@@ -5,7 +5,6 @@ import "./Starfield.scss";
 <section id="starfield-canvas"></section>
 
 <script defer>
-    // let resizeTimeout;
     const parent = document.getElementById("starfield-canvas");
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -19,11 +18,8 @@ import "./Starfield.scss";
 
     function onWindowResize() {
         fadeOutAndAdjustStarPositions();
-        // clearTimeout(resizeTimeout);
-        // resizeTimeout = setTimeout(function () {
         removeExistingStars();
         placeRandomStars();
-        // }, 1000);
 
         if (document.querySelectorAll("#svg-canvas").length > 0) {
             document

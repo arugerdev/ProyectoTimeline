@@ -1,3 +1,8 @@
+@font-face {
+    font-family: KingdomHearts;
+    src: url('/fonts/Kingdom_Hearts_Font.ttf');
+}
+
 main {
     display: flex;
     position: relative;
@@ -12,8 +17,7 @@ main {
     min-width: 100vw;
     height: 100%;
     width: 100%;
-    // width: fit-content;
-
+    padding-right: 15%;
     background: transparent;
     overflow-y: hidden;
     overflow-x: scroll;
@@ -54,6 +58,7 @@ html {
 }
 
 #svg-canvas {
+    width: 100%;
     position: static;
     user-select: none;
     pointer-events: none;
@@ -69,4 +74,33 @@ html {
     }
 
     z-index: -1;
+}
+
+.main_title{
+    font-size:50px;
+    padding: 0;
+    margin: 0;
+    font-weight: 200;
+    font-family: KingdomHearts;
+
+}
+
+.main_description{
+    font-size:12px;
+    padding: 0;
+    margin: 0;
+    font-weight: 200;
+    color: #aaa;
+}
+
+.main_info{
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 8px;
 }

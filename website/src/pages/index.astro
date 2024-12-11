@@ -102,6 +102,66 @@ const WORLDS = {
 		href: "https://kingdomhearts.fandom.com/es/wiki/Fin_del_Mundo",
 		imgRef: "/images/worlds/Logo_El_Fin_Del_Mundo_KH1.webp",
 	},
+	TraverseTown: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Ciudad_de_Paso",
+		imgRef: "/images/worlds/Traverse_Town_Logo_KH.webp",
+	},
+	TwilightTown: {
+		href: "https://disneyypixar.fandom.com/es/wiki/Twilight_Town",
+		imgRef: "/images/worlds/Twilight_Town_Logo_KH3.webp",
+	},
+	ElMundoInexistente: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/El_Mundo_Inexistente",
+		imgRef: "/images/worlds/The_World_That_Never_Was_Logo_KH3D.webp",
+	},
+	TierrasDelReino: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Tierras_del_Reino",
+		imgRef: "/images/worlds/Pride_Lands_Logo_KHII.webp",
+	},
+	PortRoyal: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Port_Royal",
+		imgRef: "/images/worlds/Logo_Port_Royal.webp",
+	},
+	LaCiteDesCloches: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Ciudad_de_las_Campanas",
+		imgRef: "/images/worlds/La_Cite_des_Cloches.webp",
+	},
+	ParaisoDelBromista: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Para%C3%ADso_del_Bromista",
+		imgRef: "/images/worlds/Prankster%27s_Paradise_Logo_KH3D.webp",
+	},
+	LaRed: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/La_Red",
+		imgRef: "/images/worlds/The_Grid_Logo.webp",
+	},
+	PaisDeLosMosqueteros: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Pa%C3%ADs_de_los_Mosqueteros",
+		imgRef: "/images/worlds/The_Country_of_Musketeers_Logo.webp",
+	},
+	SinfoniaDelBrujo: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Sinfon%C3%ADa_del_Brujo",
+		imgRef: "/images/worlds/Symphony_of_Sorcery_Logo.webp",
+	},
+	Monstruopolis: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Monstru%C3%B3polis",
+		imgRef: "/images/worlds/Monstropolis_KHIII.webp",
+	},
+	Arendelle: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Arendelle",
+		imgRef: "/images/worlds/Arandelle_Logo.webp",
+	},
+	SanFransokyo: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/San_Fransokyo",
+		imgRef: "/images/worlds/San_Fransokyo_Logo.webp",
+	},
+	CajaDeJuguetes: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Caja_de_Juguetes",
+		imgRef: "/images/worlds/Toy_Box_KHIII.webp",
+	},
+	ReinoDeCorona: {
+		href: "https://kingdomhearts.fandom.com/es/wiki/Reino_de_Corona",
+		imgRef: "/images/worlds/Kingdom_Of_Corona_Logo.webp",
+	},
 };
 ---
 
@@ -110,10 +170,69 @@ const WORLDS = {
 		<Starfield />
 		<ProgressBar />
 		<section class="timelineContent">
+			<section class="main_info">
+				<h1 class="main_title">Kingdom Hearts - Timeline</h1>
+				<p class="main_description">
+					aruger.dev
+					<br />
+					Shift + Scroll to move page
+					<br />
+					Shift + Rueda del raton para moverse en la web
+				</p>
+			</section>
+			<InteractableIcon
+				id="start_point"
+				iconHref="images/point.png"
+				reversedWorlds={false}
+				title="Punto de partida"
+				date=""
+				position={{ x: "50%", y: "50%" }}
+				worlds={[]}
+			>
+				<>
+					<em>
+						Kingdom Hearts (キングダムハーツ Kingudamu Hātsu?) es
+						una serie de videojuegos, perteneciente al género de
+						juegos de rol de acción, desarrollado y publicado por
+						Square Enix. Surge de la colaboración de Square Enix y
+						The Walt Disney Company, bajo la dirección de Tetsuya
+						Nomura, diseñador de larga trayectoria en Square Enix.
+						Kingdom Hearts es un crossover de varias producciones de
+						Disney y otros títulos de Square Enix como la serie
+						Final Fantasy, pero siendo adaptados al universo del
+						juego, interactuando unos con otros y con los personajes
+						originales de los juegos. La serie se centra en el viaje
+						del personaje principal, Sora, en el cual recorre varios
+						mundos ya sean originales del juego o basados en
+						escenarios de películas de Disney.
+					</em>
+					<br />
+					<br />
+
+					Esta web muestra una linea de tiempo cronologica de los
+					juegos de la saga de KindomHearts, toda la información, o en
+					su gran mayoría, ha sido extraida de <a target="_blank"
+						href="https://kingdomhearts.fandom.com/es/wiki/"
+						><strong><em>kingdomhearts.fandom.com</em></strong></a
+					>
+					<br />
+					<br />
+
+					Esta web ha sido desarrollada por Álvaro Ruger, puedes ver
+					mas información en <a target="_blank" href="https://aruger.dev"
+						><strong><em>aruger.dev</em></strong></a
+					>
+					<br />
+					<br />
+					Para moverse en la pagina puede usar Shift (Mayus) + La rueda
+					del ratón, también puede hace click en la rueda del raton y moverse
+					con el movimiento del puntero.
+				</>
+			</InteractableIcon>
 			<InteractableIcon
 				id="kh_x_pc_0"
 				iconHref="images/logos/kh_x_pc_logo.webp"
-				reversedWorlds={false}
+				reversedWorlds={true}
 				title="Kingdom Hearts X (PC)"
 				date="18 de julio de 2013"
 				position={{ x: "50%", y: "50%" }}
@@ -309,8 +428,9 @@ const WORLDS = {
 				position={{ x: "170%", y: "40%" }}
 				worlds={[
 					WORLDS.IslasDelDestino,
-					WORLDS.DaybreakTown,
+					WORLDS.TraverseTown,
 					WORLDS.VergelRadiante,
+					WORLDS.FinDelMundo,
 					WORLDS.PaisDeLasMaravillas,
 					WORLDS.ColiseoDelOlimpo,
 					WORLDS.SelvaProfunda,
@@ -360,56 +480,378 @@ const WORLDS = {
 					</a>
 				</>
 			</InteractableIcon>
+			<InteractableIcon
+				id="kh_com"
+				iconHref="images/logos/kh_chains_of_memories_logo.webp"
+				reversedWorlds={true}
+				title="Kingdom Hearts Chains Of Memories (Game Boy Advance)"
+				date=" 11 de noviembre del 2004"
+				position={{ x: "210%", y: "40%" }}
+				worlds={[
+					WORLDS.CastilloDelOlvido,
+					WORLDS.TraverseTown,
+					WORLDS.Agrabah,
+					WORLDS.ColiseoDelOlimpo,
+					WORLDS.PaisDeLasMaravillas,
+					WORLDS.Monstruo,
+					WORLDS.CuidadDeHalloween,
+					WORLDS.Atlantis,
+					WORLDS.PaisDeNuncaJamas,
+					WORLDS.VergelRadiante,
+					WORLDS.AcreWood,
+					WORLDS.TwilightTown,
+					WORLDS.IslasDelDestino,
+				]}
+			>
+				<>
+					<p>
+						<strong>Kingdom Hearts: Chain of Memories</strong> es un
+						videojuego nipón creado exclusivamente para Nintendo Game
+						Boy Advance por Square Enix. Este juego retoma la historia
+						donde acaba Kingdom Hearts, para PlayStation 2, y concluye
+						en el principio de Kingdom Hearts II.
+						<br />
+						<br />
+						Sora, Goofy y Donald siguen en busca de Riku y el rey Mickey.
+						De repente, se encuentran con una triple bifurcación. Se
+						paran a dormir allí. Más tarde, ya muy de noche Sora se desvela
+						y de repente encuentra a un encapuchado, que parece ser el
+						malvado del juego. Éste le dice a Sora: "Más adelante encontrarás
+						algo que buscas, mas deberás perder algo querido para encontrarlo".
+						Tras esto, el encapuchado desaparece dejando a Sora solo.
+						Al desaparecer las tres bifurcaciones pasan a ser un solo
+						camino.
+						<br />
+						<br />
+						Aunque a algunos no le funcionan, aquí jugaremos con un personaje
+						oscuro, Riku. Empezamos en el mundo de la oscuridad, donde
+						Riku consigue escapar gracias al naipe que nos da "alguien".
+						Al final se descubre que ese alguien es Ansem. Después de
+						eso, Riku se encuentra con Maléfica, bruja que le engañó
+						en Kingdom Hearts. Sin embargo, esta Maléfica no es real,
+						porque el sitio adonde Riku es transportado es el Castillo
+						del Olvido. Le explica que sólo verá seres oscuros, ya que
+						es sólo oscuridad lo que alberga su corazón.
+					</p>
+					<a
+						style="display: flex; position:absolute; bottom:24px; right:24px;"
+						href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts:_Chain_of_Memories"
+						target="_blank"
+					>
+						<img
+							src="/images/icons/link-ico.png"
+							alt=""
+							width="16"
+						/>
+					</a>
+				</>
+			</InteractableIcon>
+			<InteractableIcon
+				id="kh_358"
+				iconHref="images/logos/kh_358days_logo.webp"
+				reversedWorlds={false}
+				title="Kingdom Hearts 358/2 Days (Nintendo DS)"
+				date=" 30 de mayo del 2009"
+				position={{ x: "210%", y: "40%" }}
+				worlds={[
+					WORLDS.Agrabah,
+					WORLDS.CastilloDeBestia,
+					WORLDS.CastilloDelOlvido,
+					WORLDS.CuidadDeHalloween,
+					WORLDS.ColiseoDelOlimpo,
+					WORLDS.IslasDelDestino,
+					WORLDS.ElMundoInexistente,
+					WORLDS.PaisDeNuncaJamas,
+					WORLDS.PaisDeLasMaravillas,
+					WORLDS.TwilightTown,
+				]}
+			>
+				<>
+					<p>
+						<strong>Kingdom Hearts 358/2 Days</strong> es un juego RPG
+						desarrollado por Square Enix para Nintendo DS, con la ayuda
+						de H.A.N.D. El juego trata sobre la vida de Roxas entre el
+						final de Kingdom Hearts y el principio de Kingdom Hearts
+						II, descubriendo los hechos transcurridos desde la creación
+						de Roxas hasta su enfrentamiento con Riku.
+						<br />
+						<br />
+						Cuando Sora se convierte él mismo en un Sincorazón para liberar
+						el corazón de su amiga Kairi en KH 1, nace también su Incorpóreo,
+						Roxas. Sin embargo, a diferencia del resto de incorpóreos,
+						Roxas conserva un cuerpo humano y recuerda pequeños trozos
+						de su vida pasada como Sora. Tan pronto Roxas es encontrado
+						por Xemnas, el líder de la Organización XIII, es reclutado
+						como su decimotercer miembro. Cada día le envían a hacer
+						misiones a otros mundos, tanto acompañado de sus otros miembros
+						como sólo, para matar a los Sincorazón, liberando corazones
+						robados y consiguiendo la meta de la Organización que es
+						invocar Kingdom Hearts y convertirse en seres completos.
+						Mientras estaba en la Organización, es tutelado por Axel,
+						y rápidamente se convierten en amigos. Poco tiempo después
+						de la incorporación de Roxas, aparece un decimocuarto miembro:
+						Xion, que no sabe nada acerca de su pasado y, como Roxas,
+						también puede blandir la llave-espada, y poco a poco se empiezan
+						a conocer más y forman un trío de amigos.
+					</p>
+					<a
+						style="display: flex; position:absolute; bottom:24px; right:24px;"
+						href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts_358/2_Days"
+						target="_blank"
+					>
+						<img
+							src="/images/icons/link-ico.png"
+							alt=""
+							width="16"
+						/>
+					</a>
+				</>
+			</InteractableIcon>
+			<InteractableIcon
+				id="kh_2"
+				iconHref="images/logos/kh_2_logo.webp"
+				reversedWorlds={true}
+				title="Kingdom Hearts 2 (PlayStation 2)"
+				date="22 de diciembre del 2005"
+				position={{ x: "210%", y: "40%" }}
+				worlds={[
+					WORLDS.TwilightTown,
+					WORLDS.TorreDeLosMisterios,
+					WORLDS.CastilloDeBestia,
+					WORLDS.PortRoyal,
+					WORLDS.TierrasDelReino,
+					WORLDS.ElMundoInexistente,
+					WORLDS.AcreWood,
+					WORLDS.Agrabah,
+					WORLDS.IslasDelDestino,
+					WORLDS.CiudadDisney,
+					WORLDS.CuidadDeHalloween,
+					WORLDS.VergelRadiante,
+					WORLDS.ColiseoDelOlimpo,
+					WORLDS.Atlantis,
+					WORLDS.EspacioProfundo,
+					WORLDS.CastilloDelOlvido,
+				]}
+			>
+				<>
+					<p>
+						<strong>Kingdom Hearts II</strong> es un videojuego de rol
+						japonés desarrollado y publicado por Square Enix en el año
+						2005 en Japón y en 2006 para su lanzamiento mundial. El juego
+						se centra en Sora y sus amigos, que libran una batalla continua
+						contra la Oscuridad, y el enfrentamiento oficial con la Organización
+						XIII y los Incorpóreos. También ofrece una serie de mejoras
+						sobre el original con muchas características nuevas, entre
+						ellas, los Comandos de Reacción.
+						<br />
+						<br />
+						Kingdom Hearts II sucede después de Kingdom Hearts: Chain
+						of Memories y Kingdom Hearts 358/2 Days. Roxas es un chico
+						aparentemente normal, que vive en Villa Crepúsculo junto
+						a sus amigos Hayner, Pence y Olette. Roxas sueña con personas
+						que nunca ha visto y recuerdos que no le pertenecen. Además,
+						un individuo llamado Axel aparece, al igual que un personaje
+						de vendas rojas (DiZ), ambos parecen saber algo sobre él,
+						pero Roxas no puede recordarlos. Así pues, durante diferentes
+						periodos de tiempo, Roxas tiene el poder de blandir la Llave
+						Espada, la cuál, a pesar de no haberla visto antes, sabe
+						utilizar a la perfección, al tiempo que varios sucesos extraños
+						empiezan a ocurrir en Villa Crepúsculo.
+					</p>
+					<a
+						style="display: flex; position:absolute; bottom:24px; right:24px;"
+						href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts_IIxº"
+						target="_blank"
+					>
+						<img
+							src="/images/icons/link-ico.png"
+							alt=""
+							width="16"
+						/>
+					</a>
+				</>
+			</InteractableIcon>
+			<InteractableIcon
+				id="kh_3d_ddd"
+				iconHref="images/logos/kh_3d_ddd_logo.webp"
+				reversedWorlds={false}
+				title="Kingdom Hearts 3D: Dream Drop Distance (Nintendo 3DS)"
+				date="29 de marzo del 2012"
+				position={{ x: "210%", y: "40%" }}
+				worlds={[
+					WORLDS.VergelRadiante,
+					WORLDS.IslasDelDestino,
+					WORLDS.DaybreakTown,
+					WORLDS.LaCiteDesCloches,
+					WORLDS.ParaisoDelBromista,
+					WORLDS.LaRed,
+					WORLDS.PaisDeLosMosqueteros,
+					WORLDS.SinfoniaDelBrujo,
+				]}
+			>
+				<>
+					<p>
+						<strong>Kingdom Hearts 3D: Dream Drop Distance</strong> es
+						un juego de la saga Kingdom Hearts lanzado en la portátil
+						Nintendo 3DS. Fue lanzado el 29 de marzo de 2012 en Japón,
+						y ya se ha anunciado que tiene fecha de lanzamiento en Europa
+						para 20 de julio de 2012, y en EE.UU./Canadá para el 31 de
+						julio de 2012. La fecha de lanzamiento para Australia ha
+						sido anunciada para el 26 de julio de 2012. Es el cuarto
+						juego de la saga para una portátil de Nintendo. Kingdom Hearts
+						3D: Dream Drop Distance ha sido desarrollado por el mismo
+						equipo que trabajó en Kingdom Hearts Birth by Sleep y es
+						el siguiente juego de la saga tras el mencionado.
+						<br />
+						<br />
+						En Vergel Radiante, Braig se adentra en el área informática
+						del estudio de Ansem el Sabio y se encuentra a Even y Ienzo
+						inconscientes en el suelo con unas manchas de oscuridad que
+						emanan de ellos. El único que está consciente en la sala
+						es Terra-Xehanort, al cual Braig hace unas preguntas. Terra-Xehanort
+						responde invocando la Llave Espada del Maestro Xehanort y
+						se la clava a Braig al pecho, extrayendo su corazón. Cuando
+						Braig pierde la conciencia, Terra-Xehanort declara que ahora
+						es "Ansem". Once años después, Yen Sid pone a Sora y Riku
+						a prueba mediante el Examen del Título de Maestro con el
+						fin de que se conviertan en Maestros de la Llave Espada hechos
+						y derechos y contrarrestar así el próximo regreso del Maestro
+						Xehanort
+					</p>
+					<a
+						style="display: flex; position:absolute; bottom:24px; right:24px;"
+						href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts_3D:_Dream_Drop_Distance"
+						target="_blank"
+					>
+						<img
+							src="/images/icons/link-ico.png"
+							alt=""
+							width="16"
+						/>
+					</a>
+				</>
+			</InteractableIcon>
+			<InteractableIcon
+				id="kh_3"
+				iconHref="images/logos/kh_3_logo.webp"
+				reversedWorlds={true}
+				title="Kingdom Hearts III (PlayStation 4, Xbox One, Nintendo Switch, PC)"
+				date="25 de enero del 2019"
+				position={{ x: "210%", y: "40%" }}
+				worlds={[
+					WORLDS.ScalaAdCaelum,
+					WORLDS.TwilightTown,
+					WORLDS.ColiseoDelOlimpo,
+					WORLDS.PortRoyal,
+					WORLDS.AcreWood,
+					WORLDS.Monstruopolis,
+					WORLDS.Arendelle,
+					WORLDS.CajaDeJuguetes,
+					WORLDS.SanFransokyo,
+					WORLDS.ReinoDeCorona,
+				]}
+			>
+				<>
+					<p>
+						<strong>Kingdom Hearts III</strong> es un videojuego de rol
+						de acción desarrollado y publicado por Square Enix para PlayStation
+						4 y Xbox One. Se trata de la doceava entrega de la saga Kingdom
+						Hearts, siendo una secuela de Kingdom Hearts II y el capítulo
+						final de la saga del Buscador de la Oscuridad. Situado tras
+						los eventos de Kingdom Hearts 3D: Dream Drop Distance; el
+						protagonista Sora regresa para unirse junto al Pato Donald,
+						Goofy, el Rey Mickey y Riku en su búsqueda de los siete Guardianes
+						de la Luz y la "Llave para devolver corazones" en su intento
+						de frustrar los planes del restaurado Maestro Xehanort de
+						iniciar una segunda Guerra de las Llaves Espada. Su viaje
+						los hace cruzarse con diferentes personajes y visitar varios
+						mundos basados en propiedades de Disney y Pixar.
+						<br />
+						<br />
+						Tras el regreso del Maestro Xehanort, Yen Sid comienza a
+						preparar a los siete custodios de la luz para contrarrestar
+						el plan de Xehanort de forjar la llave espada x utilizando
+						una Organización XIII reconstituida. Sora, que estuvo a punto
+						de ser dominado por Xehanort, (como se muestra en Kingdom
+						Hearts 3D: Dream Drop Distance.) descubre que ha perdido
+						gran parte de su propia fuerza como resultado. Acompañado
+						por el Pato Donald y Goofy, Sora retoma sus viajes por otros
+						mundos para recuperar su "poder del despertar", la capacidad
+						de restaurar los corazones perdidos. Mientras tanto, Riku
+						y el Rey Mickey buscan a Aqua en el reino de la oscuridad,
+						mientras Kairi y Lea se entrenan con Merlín para manejar
+						correctamente sus recién obtenidas Llaves Espadas.
+					</p>
+					<a
+						style="display: flex; position:absolute; bottom:24px; right:24px;"
+						href="https://kingdomhearts.fandom.com/es/wiki/Kingdom_Hearts_III"
+						target="_blank"
+					>
+						<img
+							src="/images/icons/link-ico.png"
+							alt=""
+							width="16"
+						/>
+					</a>
+				</>
+			</InteractableIcon>
 		</section>
 
 		<script defer>
 			function createLines() {
+				connectDivs("start_point", "kh_x_pc_0", "white", 0.6, 10);
 				connectDivs("kh_x_pc_0", "kh_dark_road", "white", 0.6, 10);
 				connectDivs("kh_dark_road", "kh_bbs", "white", 0.6, 10);
 				connectDivs("kh_bbs", "kh_1", "white", 0.6, 10);
+				connectDivs("kh_1", "kh_com", "white", 0.6, 10);
+				connectDivs("kh_com", "kh_358", "white", 0.6, 10);
+				connectDivs("kh_358", "kh_2", "white", 0.6, 10);
+				connectDivs("kh_2", "kh_3d_ddd", "white", 0.6, 10);
+				connectDivs("kh_3d_ddd", "kh_3", "white", 0.6, 10);
 			}
 
 			// clickAndDrag(document.documentElement, 1, "grabbed_elem");
 
-			function clickAndDrag(
-				selector,
-				scroll_speed = 3,
-				classOnEvent = "grabbed_elem",
-			) {
-				const slider = selector;
-				let isDown = false;
-				let startX;
-				let scrollLeft;
-				slider.addEventListener("mousedown", (e) => {
-					e.preventDefault();
-					isDown = true;
-					slider.classList.add(classOnEvent);
-					startX = e.pageX - slider.offsetLeft;
-					scrollLeft = slider.scrollLeft;
+			// function clickAndDrag(
+			// 	selector,
+			// 	scroll_speed = 3,
+			// 	classOnEvent = "grabbed_elem",
+			// ) {
+			// 	const slider = selector;
+			// 	let isDown = false;
+			// 	let startX;
+			// 	let scrollLeft;
+			// 	slider.addEventListener("mousedown", (e) => {
+			// 		e.preventDefault();
+			// 		isDown = true;
+			// 		slider.classList.add(classOnEvent);
+			// 		startX = e.pageX - slider.offsetLeft;
+			// 		scrollLeft = slider.scrollLeft;
 
-					// prevent default child behavior
-					document.body.addEventListener("click", function (event) {
-						if (slider.contains(event.target)) {
-							event.preventDefault();
-						}
-					});
-				});
-				slider.addEventListener("mouseleave", () => {
-					isDown = false;
-					slider.classList.remove(classOnEvent);
-				});
-				slider.addEventListener("mouseup", () => {
-					isDown = false;
-					slider.classList.remove(classOnEvent);
-				});
-				slider.addEventListener("mousemove", (e) => {
-					if (!isDown) return;
-					e.preventDefault();
-					const x = e.pageX - slider.offsetLeft;
-					const walk = (x - startX) * scroll_speed; //scroll-fast
-					slider.scrollLeft = scrollLeft - walk;
-				});
-			}
+			// 		// prevent default child behavior
+			// 		document.body.addEventListener("click", function (event) {
+			// 			if (slider.contains(event.target)) {
+			// 				event.preventDefault();
+			// 			}
+			// 		});
+			// 	});
+			// 	slider.addEventListener("mouseleave", () => {
+			// 		isDown = false;
+			// 		slider.classList.remove(classOnEvent);
+			// 	});
+			// 	slider.addEventListener("mouseup", () => {
+			// 		isDown = false;
+			// 		slider.classList.remove(classOnEvent);
+			// 	});
+			// 	slider.addEventListener("mousemove", (e) => {
+			// 		if (!isDown) return;
+			// 		e.preventDefault();
+			// 		const x = e.pageX - slider.offsetLeft;
+			// 		const walk = (x - startX) * scroll_speed; //scroll-fast
+			// 		slider.scrollLeft = scrollLeft - walk;
+			// 	});
+			// }
+
 			function createSVG() {
 				var svg = document.getElementById("svg-canvas");
 				if (null == svg) {
@@ -429,10 +871,11 @@ const WORLDS = {
 						"xmlns:xlink",
 						"http://www.w3.org/1999/xlink",
 					);
-					document.body.appendChild(svg);
+					document.querySelector("main").appendChild(svg);
 				}
 				return svg;
 			}
+
 			function findAbsolutePosition(htmlElement) {
 				var x = htmlElement.offsetLeft;
 				var y = htmlElement.offsetTop;
@@ -449,6 +892,7 @@ const WORLDS = {
 					y: y,
 				};
 			}
+
 			function connectDivs(leftId, rightId, color, tension, strokeWidth) {
 				var left = document.getElementById(leftId);
 				var right = document.getElementById(rightId);
@@ -479,6 +923,7 @@ const WORLDS = {
 					strokeWidth,
 				);
 			}
+
 			function drawCircle(x, y, radius, color) {
 				var svg = createSVG();
 				var shape = document.createElementNS(
@@ -491,6 +936,7 @@ const WORLDS = {
 				shape.setAttributeNS(null, "fill", color);
 				svg.appendChild(shape);
 			}
+
 			function drawCurvedLine(
 				x1,
 				y1,
